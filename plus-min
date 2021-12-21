@@ -37,4 +37,35 @@ There are  positive numbers,  negative numbers, and  zero in the array.
 The proportions of occurrence are positive:  , negative:  and zeros:  .
 
 
+import Foundation
 
+/*
+I first tried to use floor to trim my Double to 6 digits but it was ugly code, and it also failed to keep trailing zeros. 
+Therefore. I went with option to convert to string and set %.6 instead. Passed all tests.
+ */
+
+func plusMinus(arr: [Int]) -> Void {
+    let arrCount: Double = Double(arr.count)
+    var positiveCount: Double = 0
+    var negativeCount: Double = 0
+    var zeroCount: Double = 0
+   
+    for i in arr {
+               if i < 0 {
+                 negativeCount += 1
+               }
+               if i > 0 {
+                 positiveCount += 1
+               }
+               if i == 0 {
+                 zeroCount += 1
+               }
+
+    }
+ let posRatio: String = String(format: "%.6f", positiveCount / arrCount)
+ let negRatio: String = String(format: "%.6f", negativeCount / arrCount)
+ let zeroRatio: String = String(format: "%.6f", zeroCount / arrCount)
+  
+ print(posRatio, negRatio, zeroRatio, separator: "\n")
+
+}
