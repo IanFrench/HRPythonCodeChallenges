@@ -1,18 +1,21 @@
-You will be given a list of 32 bit unsigned integers. Flip all the bits ( and ) and return the result as an unsigned integer.
+You will be given a list of 32 bit unsigned integers. Flip all the bits and return the result as an unsigned integer.
 Example 
 
-. We're working with 32 bits, so:
+. We're working with 32 bits so we need the leading zeros.
  
 
-Return .
-Function Description
-Complete the flippingBits function in the editor below.
-flippingBits has the following parameter(s):
-int n: an integer
-Returns
-int: the unsigned decimal integer result
-Input Format
-The first line of the input contains , the number of queries. 
-Each of the next  lines contain an integer, , to process.
-Constraints
+def flippingBits(n):
+    
+    
+    x = "{:032b}".format(n).  //converts the int to a 32 bit including all zeros 
+    y = x.replace('0','2')     // sytematically replace all 0 to 2, outside of bin range
+    y = y.replace('1','0').    // change all 1 to 0
+    y = y.replace('2','1').    // then cvhange back all 2 to 1 
+
+    z = int(y, 2).  // using int feature we need to add the 2 becuase bin is base 2
+
+    
+    return z
+
+
  
