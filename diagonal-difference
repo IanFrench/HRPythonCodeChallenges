@@ -17,3 +17,31 @@ Constraints
 
 Output Format
 Return the absolute difference between the sums of the matrix's two diagonals as a single integer.
+
+def diagonalDifference(arr):
+
+  if len(arr) != len(arr[0]):
+    print("Not a square matrix")
+    return
+
+  size = len(arr)-1
+  primary = 0
+  secondary = 0
+  print(*arr, sep="\n")
+
+  for i in range(len(arr)):
+    for j in range(len(arr[0])):
+      if i + j == size and i == j:
+        primary += arr[i][j]
+        secondary += arr[i][j]
+      if i == j and i + j != size:
+        primary += arr[i][j]
+      if i + j == size and i != j:
+        secondary += arr[i][j]
+      else:
+        continue
+  print(abs(primary - secondary))
+
+
+
+diagonalDifference([[15 ,2 ,-3, -21, 5], [-21, 5, -18, 27, -12], [-7, 12, 9, 15, 42], [1, 2, 3, 4, 6], [-5, -2, 99, 12, -99]])
