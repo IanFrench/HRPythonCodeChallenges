@@ -30,7 +30,7 @@ def compareTriplets(a, b):
     
     if len(a) != len(b):
     print("Invalid triplet input")
-    return nil
+    return 
     res = [0,0]
     for i in range(len(a)):
         if a[i] > b[i]:
