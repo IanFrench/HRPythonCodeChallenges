@@ -18,3 +18,36 @@ minion_game has the following parameters:
 string string: the string to analyze
 Prints
 string: the winner's name and score, separated by a space on one line, or Draw if there is no winner
+
+
+My solution:
+
+s = string.upper()
+    vowels = 'AEIOU'
+    size = len(s)
+    k_points = 0
+    s_points = 0
+
+    for char in range(size):
+        if s[char].isndigit():
+        print("Invalid input string."
+        return
+        if s[char] in vowels:
+            #print(s[char])
+            k_points += (size - char)
+        else:
+            #print(s[char])
+            s_points += (size - char)
+            
+    if k_points == s_points:
+        print ("Draw")     
+    elif s_points > k_points:
+        print(f"Stuart {s_points}") 
+    else:
+        print(f"Kevin {k_points}")
+        
+    LOGIC:
+    Ensured input was all upper case and created a vowels string(edge case of bad input). set size to length of the input string and created variables for players scores. 
+    Iterate through the length of the word evaluating first if any of the values are a number we break (edge case again) then if the char value at the index of char is a vowel. If so, then just add the length of the 
+    remaining word at that index hence size - char. If not in vowels, same thing for the other player. Continue iterating the whole word and finally 
+    compare the scores to determine winner (if there ws one).
