@@ -1,0 +1,17 @@
+def processLogs(logs, maxSpan):
+    # Write your code here
+
+    log = sorted(logs)
+    users = []
+
+    for j in range(len(log)):
+        a = log[j-1].split(' ')
+        b = log[j].split(' ')
+        if j % 2 != 0:
+            diff = abs(int(b[1]) - int(a[1]))
+
+            if diff <= maxSpan:
+                users.append(b[0])
+    res = sorted(users, reverse = True)
+
+    return res
